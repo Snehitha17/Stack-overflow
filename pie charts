@@ -1,0 +1,11 @@
+temp = stack_data['Hobby'].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='% of Developers who codes as their hobby', hole = 0.7)
+
+temp = stack_data['OpenSource'].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='box',labels='labels',values='values', title='% of Developers who contributes to open source projects', hole = 0.7)
