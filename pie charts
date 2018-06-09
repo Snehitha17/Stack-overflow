@@ -8,4 +8,61 @@ temp = stack_data['OpenSource'].value_counts()
 df = pd.DataFrame({'labels': temp.index,
                    'values': temp.values
                   })
-df.iplot(kind='box',labels='labels',values='values', title='% of Developers who contributes to open source projects', hole = 0.7)
+df.iplot(kind='pie',labels='labels',values='values', title='% of Developers who contributes to open source projects', hole = 0.7)
+
+temp = stack_data["Country"].dropna().value_counts().head(10)
+temp.iplot(kind='bar', xTitle = 'Country name', yTitle = "Count", title = 'Which Country having highest number of respondents')
+
+temp = stack_data['Student'].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='% of Developers who are students', hole = 0.7)
+
+temp = stack_data['Employment'].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='Employment Status of Developers', hole = 0.7)
+
+temp = stack_data['FormalEducation'].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='highest level of formal education of Developers in %', hole = 0.7)
+
+temp = stack_data['UndergradMajor'].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='highest level of formal education of Developers in %', hole = 0.7)
+
+temp = stack_data['CompanySize'].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='Number of people are employed by the company or organization they work for in %', hole = 0.7)
+
+temp = stack_data["JobSatisfaction"].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='Satisfaction of peoples with their current job', hole = 0.7)
+
+temp = stack_data["CareerSatisfaction"].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='Satisfaction of peoples with their career thus far', hole = 0.7)
+
+temp = stack_data["SurveyEasy"].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='Count in %', hole = 0.7)
+
+temp = stack_data["SurveyTooLong"].value_counts()
+df = pd.DataFrame({'labels': temp.index,
+                   'values': temp.values
+                  })
+df.iplot(kind='pie',labels='labels',values='values', title='# of people thinking about length of the survey (%)', hole = 0.7)
